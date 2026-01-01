@@ -1,0 +1,134 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #ffc0da, #ffe4ec);
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Sparkles ===== */
+.sparkles span {
+  position: absolute;
+  bottom: -10px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleFloat 8s linear infinite;
+}
+
+.sparkles span:nth-child(odd) {
+  width: 8px;
+  height: 8px;
+  animation-duration: 10s;
+}
+
+.sparkles span:nth-child(even) {
+  animation-duration: 7s;
+}
+
+.sparkles span {
+  left: calc(5% * var(--i));
+}
+
+.sparkles span:nth-child(1) { left: 5%; }
+.sparkles span:nth-child(2) { left: 10%; }
+.sparkles span:nth-child(3) { left: 20%; }
+.sparkles span:nth-child(4) { left: 30%; }
+.sparkles span:nth-child(5) { left: 40%; }
+.sparkles span:nth-child(6) { left: 50%; }
+.sparkles span:nth-child(7) { left: 60%; }
+.sparkles span:nth-child(8) { left: 70%; }
+.sparkles span:nth-child(9) { left: 80%; }
+.sparkles span:nth-child(10) { left: 90%; }
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(0) scale(0.4);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* ===== Card ===== */
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  padding: 48px 44px;
+  max-width: 680px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(255, 105, 180, 0.45);
+  backdrop-filter: blur(14px);
+  animation: fadeIn 2.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 2.7em;
+  color: #b0005f;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #8b004f;
+  margin-bottom: 26px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.75;
+  color: #4a0030;
+  margin-bottom: 18px;
+}
+
+.name {
+  color: #c4006f;
+  font-weight: 600;
+}
+
+.signature {
+  margin-top: 32px;
+  font-size: 1.05em;
+  color: #6b003f;
+}
+
+.signature span {
+  font-style: italic;
+  font-weight: 600;
+  color: #b0005f;
+}
+
+footer {
+  margin-top: 16px;
+  font-size: 0.9em;
+  color: #7a0047;
+  opacity: 0.9;
+}
